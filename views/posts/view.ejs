@@ -1,0 +1,27 @@
+<% include ../layout/header %>
+
+    <div class="container">
+        <h1 class="text-center"><%= post.title%></h1>
+
+        <p>Author: <%= post.author%></p>
+        <p>Date: <%= date%></p>
+        <p>User: <%= myUser.name%></p>
+        <div class="clearfix">
+            <%if(myUser.username == user.username){%>
+                
+                <a href="/post/edit/<%= post._id%>" class="btn btn-secondary float-left">Edit</a>
+                <a href="#" id="post-delete" data-id="<%= post._id%>" class="btn btn-danger float-right">Delete</a>
+            <%}%>
+            
+
+
+        </div>
+        <hr />
+        <p>
+            <%= post.body%>
+        </p>
+    </div>
+
+
+
+<% include ../layout/footer %>

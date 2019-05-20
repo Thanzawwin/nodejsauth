@@ -1,0 +1,26 @@
+<% include layout/header%>
+
+<%if(user){%>
+    
+    <div class="container">
+            <ul class="list-group">
+        
+                <% posts.forEach((post)=>{%>
+                    <li class="list-group-item">
+                        <a href="post/view/<%= post._id%>" class="list-group-link">
+        
+                            <%=post.title%>
+                        </a>
+                    </li>
+                <%})%>
+            </ul>
+        </div>
+    
+    <%}else{%>
+        
+        <h1 class="text-center">Please Login</h1>
+        
+    <%}%>
+
+    
+<% include layout/footer%>

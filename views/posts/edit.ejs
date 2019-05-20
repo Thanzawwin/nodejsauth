@@ -1,0 +1,23 @@
+<% include ../layout/header %>
+    <div class="container">
+        <h1 class="text-center">Add Post</h1>
+
+        <form action="/post/update" method="POST">
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" value="<%= post.title%>" name="title" placeholder="Title....">
+            </div>
+            <div class="form-group">
+                <label>author</label>
+                <input type="text" class="form-control" value="<%= post.author%>" name="author" placeholder="Title....">
+            </div>
+            <div class="form-group">
+                <label>Body</label>
+                <textarea  class="form-control" name="body" rows="5" placeholder="Title...."><%= post.body%></textarea>
+            </div>
+            <input type="hidden" name="id" value="<%= post._id%>">
+            <input type="submit" class="btn btn-primary">
+        </form>
+    </div>
+
+<% include ../layout/footer %>
